@@ -35,11 +35,6 @@ app.use("/api/v1/product", productRoutes);
 
 //deploy
 app.use(express.static(path.join(__dirname, "./client/build")));
-
-//rest api
-app.get("/", (req, res) => {
-  res.send("<h1>Welcome to Ecommerce app</h1>");
-});
 app.get("*", function (req, res) {
   res.sendFile(path.join(__dirname, "./client/build/index.html"));
 });
